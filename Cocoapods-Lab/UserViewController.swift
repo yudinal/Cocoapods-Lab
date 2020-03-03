@@ -11,9 +11,13 @@ import UIKit
 class UserViewController: UIViewController {
     
     private let userCollectionView = UserCollectionView()
+    
     public var users = [User]() {
         didSet{
-            self.userCollectionView.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.userCollectionView.collectionView.reloadData()
+            }
+            
         }
     }
     
@@ -28,7 +32,19 @@ class UserViewController: UIViewController {
         userCollectionView.collectionView.dataSource = self
         userCollectionView.collectionView.delegate = self
         userCollectionView.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        fetchUsers()
     }
+    private func fetchUsers() {
+        UsersAPIClient.fetchUsers { (result) in
+            switch result {
+            case .failure(let error):
+                print("\(error)")
+            case .success(let user):
+                self.users = user
+            }
+        }
+    }
+    
 
 
 }
@@ -46,7 +62,7 @@ extension UserViewController: UICollectionViewDataSource {
        // cell.delegate = self
         
     let user = users[indexPath.row]
-        //cell.configureCell(category: category, viewcontroller: CollectionsViewController.self)
+        cell.configureCell(user: user, viewcontroller: UserViewController.self)
         return cell
     }
 }
@@ -55,12 +71,15 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
 
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let maxSize: CGSize = UIScreen.main.bounds.size
-    let itemSpace: CGFloat = 10
-    let numberOfItems: CGFloat = 2
-    let totalSpacing: CGFloat = numberOfItems * itemSpace
-    let itemWidth: CGFloat = (maxSize.width - 20 - totalSpacing) / numberOfItems
+    let itemWidth: CGFloat = maxSize.width * 0.95
+    return CGSize(width: itemWidth, height: 120)
+//    let maxSize: CGSize = UIScreen.main.bounds.size
+//    let itemSpace: CGFloat = 10
+//    let numberOfItems: CGFloat = 2
+//    let totalSpacing: CGFloat = numberOfItems * itemSpace
+//    let itemWidth: CGFloat = (maxSize.width - 20 - totalSpacing) / numberOfItems
     //      let itemHeight: CGFloat = maxSize.height * 0.30
-    return CGSize(width: itemWidth, height: itemWidth)
+   // return CGSize(width: itemWidth, height: itemWidth)
 }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

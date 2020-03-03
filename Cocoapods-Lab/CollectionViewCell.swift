@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class CollectionViewCell: UICollectionViewCell {
     
@@ -49,38 +50,36 @@ class CollectionViewCell: UICollectionViewCell {
         setupEmailLabelConstraints()
     }
     
-//    public func configureCell(user: User, viewcontroller: UIViewController.Type, savedVenue: SavedVenue? = nil){
-//        self.category = category
-//        categoryNameLabel.text = category.name
-//        restuarantImage.image = UIImage(data: category.image)
-//        
-//        if viewcontroller == AddCollectionsController.self{
-//            addButton.isHidden = false
-//            self.savedVenue = savedVenue
-//        } else {
-//            addGestureRecognizer(longPressGesture)
-//            addButton.isHidden = true
-//        }
-//    }
+    public var user: User?
+    
+    
+    public func configureCell(user: User, viewcontroller: UIViewController.Type) {
+        self.user = user
+        let url = URL(string: user.picture.thumbnail)!
+        userNameLabel.text = "\(user.name.first) \(user.name.last)"
+        userEmailLabel.text = user.email
+        userImage.kf.setImage(with: url)
+    }
     
     private func setupUserImage() {
         addSubview(userImage)
         userImage.snp.makeConstraints { (make) in
-            make.top.leading.trailing.bottom.equalTo(self)
+            make.top.leading.bottom.equalTo(self)
+            make.width.greaterThanOrEqualTo(120)
         }
     }
     
     private func setupNameLabelConstraints() {
         addSubview(userNameLabel)
         userNameLabel.snp.makeConstraints { (make) in
-            make.top.trailing.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
+            make.top.trailing.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
     }
     
     private func setupEmailLabelConstraints() {
         addSubview(userEmailLabel)
         userEmailLabel.snp.makeConstraints { (make) in
-            make.trailing.leading.bottom.equalTo(self.safeAreaLayoutGuide).inset(40)
+            make.trailing.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
     }
     

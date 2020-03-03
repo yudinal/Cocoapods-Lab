@@ -77,3 +77,4 @@ struct UserImageInfo: Codable {
     let medium: String
     let thumbnail: String
 }
+

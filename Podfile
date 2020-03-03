@@ -8,6 +8,7 @@ target 'Cocoapods-Lab' do
   # Pods for Cocoapods-Lab
   pod 'Alamofire'
   pod 'SnapKit'
+  pod 'Kingfisher'
 
   target 'Cocoapods-LabTests' do
     inherit! :search_paths
