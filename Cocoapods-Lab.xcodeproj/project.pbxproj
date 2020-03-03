@@ -18,6 +18,7 @@
 		A6AD2CB6240DE2CA00E5D754 /* UsersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD2CB5240DE2CA00E5D754 /* UsersCollectionView.swift */; };
 		A6AD2CB8240DE9A000E5D754 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD2CB7240DE9A000E5D754 /* CollectionViewCell.swift */; };
 		A6AD2CBA240F0B1400E5D754 /* DetailUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD2CB9240F0B1400E5D754 /* DetailUserView.swift */; };
+		A6AD2CBC240F122500E5D754 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD2CBB240F122500E5D754 /* UserDetailViewController.swift */; };
 		A8995729B105F31976611F14 /* Pods_Cocoapods_LabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED56F6CCC33F11246A835CE /* Pods_Cocoapods_LabTests.framework */; };
 		E36D86D18DBA90243BF9AF62 /* Pods_Cocoapods_Lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D934E01535F432098862D89F /* Pods_Cocoapods_Lab.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		A6AD2CB5240DE2CA00E5D754 /* UsersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionView.swift; sourceTree = "<group>"; };
 		A6AD2CB7240DE9A000E5D754 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A6AD2CB9240F0B1400E5D754 /* DetailUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserView.swift; sourceTree = "<group>"; };
+		A6AD2CBB240F122500E5D754 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		C125B0652FFE428C75650D4E /* Pods-Cocoapods-LabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocoapods-LabTests.debug.xcconfig"; path = "Target Support Files/Pods-Cocoapods-LabTests/Pods-Cocoapods-LabTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D934E01535F432098862D89F /* Pods_Cocoapods_Lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocoapods_Lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED56F6CCC33F11246A835CE /* Pods_Cocoapods_LabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocoapods_LabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				A6AD2CB7240DE9A000E5D754 /* CollectionViewCell.swift */,
 				A6AD2CB9240F0B1400E5D754 /* DetailUserView.swift */,
 				A6AD2C93240DD59A00E5D754 /* UserViewController.swift */,
+				A6AD2CBB240F122500E5D754 /* UserDetailViewController.swift */,
 				A6AD2C98240DD59E00E5D754 /* Assets.xcassets */,
 				A6AD2C9A240DD59E00E5D754 /* LaunchScreen.storyboard */,
 				A6AD2C9D240DD59E00E5D754 /* Info.plist */,
@@ -312,6 +315,7 @@
 			files = (
 				A6AD2C94240DD59A00E5D754 /* UserViewController.swift in Sources */,
 				A6AD2C90240DD59A00E5D754 /* AppDelegate.swift in Sources */,
+				A6AD2CBC240F122500E5D754 /* UserDetailViewController.swift in Sources */,
 				A6AD2CB2240DD9C600E5D754 /* UsersAPIClient.swift in Sources */,
 				A6AD2CB8240DE9A000E5D754 /* CollectionViewCell.swift in Sources */,
 				A6AD2CBA240F0B1400E5D754 /* DetailUserView.swift in Sources */,

@@ -54,10 +54,42 @@ class DetailUserView: UIView {
         }
         
         private func commonInit() {
-            
+           setupUserImage()
+            setupAddressLabelConstraints()
+            setupPhoneLabelConstraints()
+            setupBirthdayLabelConstraints()
         }
     
-    
-    
+    private func setupUserImage() {
+           addSubview(userImage)
+           userImage.snp.makeConstraints { (make) in
+               make.top.leading.trailing.equalTo(self)
+               make.height.greaterThanOrEqualTo(400)
+           }
+       }
+       
+       private func setupAddressLabelConstraints() {
+           addSubview(userAddressLabel)
+           userAddressLabel.snp.makeConstraints { (make) in
+               make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(20)
+            make.top.equalTo(userImage.snp.bottom).offset(20)
+           }
+       }
+       
+       private func setupPhoneLabelConstraints() {
+           addSubview(userPhoneLabel)
+           userPhoneLabel.snp.makeConstraints { (make) in
+               make.trailing.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
+            make.top.equalTo(userAddressLabel.snp.bottom).offset(20)
+           }
+       }
+       
+    private func setupBirthdayLabelConstraints() {
+        addSubview(userBirthdayLabel)
+        userBirthdayLabel.snp.makeConstraints { (make) in
+            make.trailing.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
+         make.top.equalTo(userPhoneLabel.snp.bottom).offset(20)
+        }
+    }
 
 }

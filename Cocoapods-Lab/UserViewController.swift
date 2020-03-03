@@ -73,16 +73,12 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     let maxSize: CGSize = UIScreen.main.bounds.size
     let itemWidth: CGFloat = maxSize.width * 0.95
     return CGSize(width: itemWidth, height: 120)
-//    let maxSize: CGSize = UIScreen.main.bounds.size
-//    let itemSpace: CGFloat = 10
-//    let numberOfItems: CGFloat = 2
-//    let totalSpacing: CGFloat = numberOfItems * itemSpace
-//    let itemWidth: CGFloat = (maxSize.width - 20 - totalSpacing) / numberOfItems
-    //      let itemHeight: CGFloat = maxSize.height * 0.30
-   // return CGSize(width: itemWidth, height: itemWidth)
 }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                
+           let user = users[indexPath.row]
+    let detailViewController = UserDetailViewController()
+    detailViewController.user = user
+    navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
